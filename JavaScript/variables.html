@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="salary">
+<input type="button" onclick="calculate()" value="calculate">
+
+<p id="soln"></p>
+<script>
+function calculate(){
+	
+	var salary = document.getElementById("salary").value;
+	var tax = .29;
+	
+	document.getElementById("soln").innerHTML = salary - (salary*tax);
+	
+}
+</script>
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+#animate {
+  width: 100px;
+  height: 100px;
+LEFT:350px;
+TOP: 100px;
+  position: absolute;
+}
+</style>
+<body>
+
+<p>
+<button onclick="kick()">Kick the Soccer Ball</button>
+</p>
+
+<div id ="container">
+<div>
+<img src="https://image.spreadshirtmedia.com/image-server/v1/designs/12517804,width%3D178,height%3D178.png">
+</div>
+<div>
+<img src="http://www.clker.com/cliparts/4/w/4/H/a/g/light-blue-ball.svg"  id ="animate">
+</div>
+</div>
+
+
+
+<script>
+function kick() {
+  var elem = document.getElementById("animate");
+  var pos = 350;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 50) {
+      clearInterval(id);
+      alert("Goal");
+    } else {
+      pos--;
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+

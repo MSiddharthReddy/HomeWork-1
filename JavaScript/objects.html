@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="fName">
+<input type="text" id="lName">
+<input type="text" id="age">
+<input type="button" onclick="add()" value="Add">
+<input type="button" onclick="show()" value="Show">
+
+<p id="soln"></p>
+<script>
+var employees = [];
+
+function add(){
+	var employee = {};
+	employee.fName = document.getElementById("fName").value;
+	employee.lName = document.getElementById("lName").value;
+	employee.age = document.getElementById("age").value;
+	employees.push(employee);
+	document.getElementById("soln").innerHTML = "Welcome " + employee.fName;
+	
+}
+
+function show(){
+	document.getElementById("soln").innerHTML = "Current Employees \n";
+for(emp in employees){
+		
+	document.getElementById("soln").innerHTML += employees[emp].fName + " " + employees[emp].lName +"\n";
+	}
+		
+}
+</script>
+</body></html>
