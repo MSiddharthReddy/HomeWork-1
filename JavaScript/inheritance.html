@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button type="button" onclick="grandFa()">Grand Father</button>
+<button type="button" onclick="fa()">Father</button>
+<button type="button" onclick="s()">Son</button>
+<p id="display"></p>
+</body>
+<script>
+
+
+function grandFa(){
+new grandFather().display();
+	}
+
+function fa(){
+	new father().display();
+	}
+
+function s(){
+ son.display();
+	}
+function grandFather(){
+	
+	this.height = 6;
+	this.weight = 84;
+	this.name = "Grand Father";
+	
+}
+
+grandFather.prototype.display = function(){
+	
+	document.getElementById("display").innerHTML = this.name+ "'s height = "+ this.height + " Weight = " + this.weight;	
+}
+
+var father = function(){
+
+this.height = 6.1;
+this.weight = 90;
+this.name = "Father";
+
+}
+
+father.prototype = new grandFather();
+
+var son = new father();
+	
+	son.height = 6.2;
+	son.weight = 82;
+	son.name = "Son";
+
+</script>
+</html>

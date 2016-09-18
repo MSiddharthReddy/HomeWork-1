@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Please Enter Your Age:</p>
+
+<input id="age" type="text">
+<button type="button" onclick="check()">Check</button>
+
+<p id="error"></p>
+
+<script>
+function check() {
+	
+  document.getElementById("error").innerHTML = "";
+    var age = document.getElementById("age").value;
+    try {
+        if(age == "")  throw "Your entered value is empty";
+        if(isNaN(age)) throw "Your entered value is not a number";
+        age = Number(age);
+        if(age > 100)   throw "You Cannot be this old"; 
+        if(age > 18 && age < 100 )   throw "You are a Major!!";
+        if(age < 3)    throw "You Cannot be so young";
+        if(age > 3 && age < 18)    throw "You are a Minor";
+    }
+    catch(err) {
+        error.innerHTML = err;
+    }
+    finally {
+        document.getElementById("demo").value = "";
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+Name: <input type="text" id="name">
+<button type="button" onclick="logIn()">Log In</button>
+<button type="button" onclick="logOut()">Log Out</button>
+<p id="Message"></p>
+</body>
+<script>
+
+function logIn(){
+	
+	if(localStorage.name == undefined){
+		localStorage.name = document.getElementById("name").value;
+		document.getElementById("Message").innerHTML = "Welcome " + localStorage.name;
+	}
+	else{
+		
+		document.getElementById("Message").innerHTML = "You already Logged in as " + localStorage.name + " logout before you login again!!;";
+	}
+	
+}
+function logOut(){
+	
+	if(localStorage.name != ""){
+		
+        localStorage.removeItem("name");
+		document.getElementById("Message").innerHTML = "You successfully Loggged Out!! ";
+	}
+	else{
+		
+		document.getElementById("Message").innerHTML = "Login before you log out ";
+	}
+	
+}
+</script>
+</html>

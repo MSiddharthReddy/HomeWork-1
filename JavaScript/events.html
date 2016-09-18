@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="string" onchange="check()">
+
+<p id="soln"></p>
+<script>
+
+function check(){
+	var string = document.getElementById("string").value;
+		if(string !== string.split('').reverse().join('')){
+			document.getElementById("soln").innerHTML = "Nooo its not a Pallindrome";
+		}
+		else{
+	document.getElementById("soln").innerHTML = "YaY its a Pallindrome";
+		}
+		
+}
+</script>
+</body>
+</html>

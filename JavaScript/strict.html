@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+String 1:<input type="text" id="str1">
+String 2:<input type="text" id="str2">
+<button type="button" onclick="check2()">Check without Strict</button>
+<button type="button" onclick="check()">Check With Strict</button>
+<p id="error"></p>
+<script>
+
+function check() {
+	"use strict";
+	try{
+		alert("ReferenceError: str1 is not defined");
+	 str1 = document.getElementById("str1").value;
+	 str2 = document.getElementById("str2").value;
+   //document.getElementById("error").innerHTML = isIso(str1,str2);
+	}
+	catch(err){
+		alert(err);
+	}
+}
+function check2() {
+	try{
+	 str1 = document.getElementById("str1").value;
+	 str2 = document.getElementById("str2").value;
+   document.getElementById("error").innerHTML = isIso(str1,str2);
+	}
+	catch(err){
+		alert(err);
+	}
+}
+function isIso(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }
+    var map = {};
+    for(var i = 0; i < str1.length; i++) {
+        var a = str1[i]; 
+        var b = str2[i];
+        if (typeof map[a] === "undefined") {
+            map[a] = b;
+        } else if (map[a] !== b) {
+            return false;
+        }
+    }
+    return true;
+}
+</script>
+</body>
+</html>

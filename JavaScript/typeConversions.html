@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+Number #1: <input type="text" id="one">
+Number #2: <input type="text" id="two">
+<input type="button" onclick="add()" value="See">
+<p id="soln"></p>
+<p id="soln2"></p>
+<script>
+function add(){
+	
+	var a = document.getElementById("one").value;
+	var b = document.getElementById("two").value;
+	
+	document.getElementById("soln").innerHTML = "Before typeConversion " + (a + b) ;
+	
+	
+	document.getElementById("soln2").innerHTML = "After typeConversion " + (Number(a) + Number(b)) ;
+	
+	
+	
+	
+	
+}
+</script>
+</body>
+</html>

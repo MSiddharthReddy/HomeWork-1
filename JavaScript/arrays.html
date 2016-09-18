@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+Item Name: 
+<input type="text" id="item">
+
+<input type="button" onclick="add()" value="Add" >
+<input type="button" onclick="del()" value="Remove the last added Item">
+
+<p id="items"></p>
+
+<script>
+var items =[];
+
+function add(){
+	var item = document.getElementById("item").value;
+	items.push(item);
+	alert("Item added "+ item);
+	display();
+}
+function del(){
+	
+	alert("Item deleted "+ items.pop());
+	display();
+	
+}
+function display(){
+	document.getElementById("items").innerHTML = "Items List: \n"
+	for (var i = 0; i< items.length; i++){
+		
+		document.getElementById("items").innerHTML += items[i] + "\n";
+	}
+	
+}
+</script>
+</body>
+</html>

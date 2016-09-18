@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="str">
+<input type="text" id="string" >
+
+<button id="but" onclick="check()">Check</button>
+
+<script>
+
+function check(){
+	
+	var str = document.getElementById("str").value;
+	var re = new RegExp(document.getElementById("string").value, "g", "i");
+
+	var count = (str.match(re) || []).length;
+	alert (count);
+		
+}
+</script>
+
+</body>
+</html>
